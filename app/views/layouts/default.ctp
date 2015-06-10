@@ -111,7 +111,7 @@
                 }
             ?>
 			<br/>
-			<div class="row clearfix">
+            <div class="row clearfix" style="height: 700px">
 				<div class="col-md-12 column">
 					<?php echo $content_for_layout ?>
                     <?php e($this->Session->flash()); ?>
@@ -123,7 +123,7 @@
 </div>
 <div class="row clearfix">
     
-    <footer id="footer">
+    <footer id="footer" class="navbar-fixed-bottom">
       <div class="container" role="contentinfo">
         <div class="row">
           <div class="col-sm-12">

@@ -27,7 +27,7 @@ echo $form->create('User', array('action' => 'login','id'=>'form2','class'=>'for
 
     <div class="form-group">
         <div class="col-sm-offset-2 col-sm-10">
-             <button type="submit" class="btn btn-default">Aceptar</button>
+             <button type="submit" class="btn btn-info">Entrar</button>
         </div>
     </div>
-    <?php echo $form->end(); ?>
+    <?php echo $form->end();
