@@ -12,19 +12,15 @@ e($ajax->form(array("type"=>"post",
 ?>
 <?php //Edit Operadores ?>
 
-<div id="action_menu">
-  <ul>
-  <li class='action_menu'>Operadores</li>
-  &nbsp;&nbsp;
-  <li class='action_menu'><?php e(date('Y-M-d'));?></li>
-  </ul>
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h3 class="panel-title">Operadores</h3>
+  </div>
+  <div class="panel-body">
+      <p><?php e(date('Y-M-d'));?></p>
+      <p><div class="form-group"><?php e($form->input('Operadores.data',array('type'=>'text','label'=>'Edita/Agrega Operador','class'=>'form-control',"onKeyPress"=>"return soloNumeros(event)",'placeholder'=>'Buscar Operador => Ingresa Numero de Movil (alt+shift+b)')));?></div></p>
+  </div>
 </div>
 
-<table id="menu_info">
-	<tr />
-	  <td id="label" /><?php e($form->label('Operadores.data','Edita/Agrega Operador',array('accesskey'=>'B')));?>
-	  <td /><?php e($form->input('Operadores.data',array('type'=>'text','label'=>false,'class'=>'in_buscar',"onKeyPress"=>"return soloNumeros(event)",'placeholder'=>'Buscar Operador => Ingresa Numero de Movil (alt+shift+b)')));?>
-
-</table>
 <?php e($form->end());?>
     <div id='divOperators'><?php include('show_operators.ctp');?></div>

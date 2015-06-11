@@ -1,6 +1,6 @@
 <?php //show_phones.ctp ?>
 <?php if(!empty($phones)){?>
-<table id="menu_info">
+<table id="menu_info"  class="table table-striped table-bordered table-hover table-condensed">
 <?php
 //     if(!empty($paginate_phones)){
 //     $cells = array(
@@ -15,6 +15,7 @@
 //     echo $this->Html->tableHeaders($cells);
 //     }
 ?>
+    <thead>
     <tr />
       <th />ID
       <th />Colonia
@@ -23,7 +24,9 @@
       <th />Telefono
       <th />Llama y cuelga
       <th />Borrar
+    </thead>
     <?php $idx=1;?>
+    <tbody>
     <?php foreach($phones as $key => $value){?>
     <tr />
       <td /><?php e($idx++);?>
@@ -56,6 +59,7 @@
 	    ?>
       <td /><?php echo $this->Html->link('Borrar', array('action' => 'delete', $phones[$key]['Phones']['id']), null, 'Estas seguro?' );?>
     <?php } //end foreach?>
+      </tbody>
 </table>
 
 <?php
