@@ -77,9 +77,9 @@ class DATABASE_CONFIG {
 		'driver' => 'mysql',
 		'persistent' => false,
 		'host' => 'localhost',
-		'login' => 'root',
-		'password' => '',
-		'database' => 'coatepec_express',
+		'login' => 'radiobase',
+		'password' => '@radiobase#',
+		'database' => 'radiobase',
 		'prefix' => '',
 		//'encoding' => 'utf8',
 	);
