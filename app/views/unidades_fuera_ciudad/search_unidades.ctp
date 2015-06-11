@@ -9,10 +9,11 @@ e($ajax->form(array("type"=>"post",
              )
  );
 ?>
-<table id="menu_info">
+<table id="menu_info" class="table table-striped table-bordered table-hover table-condensed">
 <?php
 if(!empty($UnidadesFueraCiudad)){
 ?>
+    <thead>
     <tr />
       <th />Movil
       <th />Destino
@@ -21,10 +22,14 @@ if(!empty($UnidadesFueraCiudad)){
       <th />llegada
       <th />Mon
     <tr />
+    </thead>
+    <tbody>
+       
       <td />
 	    <?php
 		e($UnidadesFueraCiudad['UnidadesEnServicio']['id_movil']);
-		e($form->input('UnidadesFueraCiudad.id_movil',							array('type'=>'hidden',
+		e($form->input('UnidadesFueraCiudad.id_movil',
+                 array('type'=>'hidden',
 				      'label'=>false,
 				      'value'=>$UnidadesFueraCiudad['UnidadesEnServicio']['id_movil']
 				     )
@@ -119,6 +124,7 @@ if(!empty($UnidadesFueraCiudad)){
 <?php
 }// End if
 ?>
+    </tbody>
 </table>
 <?php
 e($form->submit('Agregar'));

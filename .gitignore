@@ -1,1 +1,5 @@
+cakePHP
+/app/tmp/*
 
+NetBeans
+/nbproject/*

@@ -12,7 +12,8 @@
 //                     )
 //      );
 ?>
-<table id="menu_info">
+<table id="menu_info"  class="table table-striped table-bordered table-hover table-condensed">
+<thead>
 <tr />
   <th />ID
   <th colspan="4"/>Unidades En Servicio
@@ -21,6 +22,7 @@
   <th colspan='6'/>En Servicio Nuevamente
   <th colspan='4' />Cambio de Canal
 <tr />
+
   <td />Mov
 <!--     under Unidades En Servicio -->
   <td />Unidad
@@ -43,7 +45,8 @@
     if(!empty($all)){
 	$i = null;
 ?>	
-
+</thead>
+<tbody>
 <?php foreach($all as $key => $value):;?>
 
     <tr>
@@ -107,6 +110,7 @@
 <?php
       endforeach;
 ?>
+     </tbody>
 </table>
 <?php
 
