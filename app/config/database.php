@@ -75,12 +75,12 @@ class DATABASE_CONFIG {
 
 	var $default = array(
 		'driver' => 'mysql',
-		'persistent' => false,
-		'host' => 'localhost',
-		'login' => 'root',
-		'password' => '',
-		'database' => 'radiobase',
-		'prefix' => '',
+ 		'persistent' => false,
+ 		'host' => 'localhost',
+-		'login' => 'radiobase',
+-		'password' => '@radiobase#',
+ 		'database' => 'radiobase',
+ 		'prefix' => '',
 		//'encoding' => 'utf8',
 	);
 
