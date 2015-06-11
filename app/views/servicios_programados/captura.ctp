@@ -10,35 +10,30 @@ e($ajax->form(array("type"=>"post",
  );
 ?>
 <?php //ServiciosProgramados ?>
-
-<div id="action_menu">
-<ul>
-<li class='action_menu'>Servicios Programados</li>
-&nbsp;&nbsp;
-<li class='action_menu'><?php e(date('Y-M-d'));?></li>
-</ul>
-</div>
-    <table id="menu_info">
-	<tr />
-	    <td id="label" /><?php e($form->label('ServiciosProgramados.hora','Ingresa la hora',array('accesskey'=>'B')));?>
-	    <td />
-		<?php e($form->input('ServiciosProgramados.hora',
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h3 class="panel-title">Servicios Programados</h3>
+  </div>
+  <div class="panel-body">
+      <p><?php e(date('Y-M-d'));?></p>
+      <p><div class="form-group"><?php e($form->input('ServiciosProgramados.hora',
 					array('type'=>'text',
-					      'label'=>false,
-					      'class'=>'in_clock',
+					      'label'=>'Ingresa la hora',
+					      'class'=>'form-control',
 					      'size'=>'10',
 					      'MaxLength'=>'4',
 					      "onKeyPress"=>"return soloNumeros(event)",
 					      'placeholder'=>'Ingresa Hora (4 digitos en formato 24Hrs) => HHMM'
 					      )
 				     )
-			);?>
-
-</table>
-
+			);?></div></p>
+  </div>
+</div>
+    
 <!-- <fieldset> -->
 <!--     <legend>Nuevo Servicio Programado</legend> -->
-<table id="menu_info" border="0" width="100%">
+<table id="menu_info" class="table table-striped table-bordered table-hover table-condensed">
+    <thead>
   <tr align="center">
 <!--     <td width="10%">HORA</td> -->
     <td width="50%">DIRECCIÓN</td>
@@ -57,6 +52,8 @@ e($ajax->form(array("type"=>"post",
     <td width="5%">Dom</td>
 <!--     <td width="2">A</td> -->
   </tr>
+  </thead>
+  <tbody>
   <tr align="center">
        <!--<td valign="top"><?php 
 //                 e($form->input('ServiciosProgramados.hora',array("label"=>false,"type"=>"text","size"=>"10","MaxLength"=>"4")));
@@ -65,16 +62,17 @@ e($ajax->form(array("type"=>"post",
        <td valign="top">
            <table border="0" width="100%">
                <tr align="center">
-                <td width="40%" valign="top"><?php e($form->input('ServiciosProgramados.id_colonia',array("id"=>"id_colonia","label"=>false,"type"=>"select","options"=>$Colonias,"empty"=>"-Colonias-")));?></td>
-                <td width="40%" valign="top"><div id="divCalles"><?php e($form->input('ServiciosProgramados.id_calle',array("label"=>false,"type"=>"select","options"=>$Calles,"empty"=>"-Calles-")));?></div></td>
-                <td width="20%" valign="top"><?php e($form->input('ServiciosProgramados.numero',array("label"=>false,"type"=>"text","size"=>"6",'placeholder'=>"Numero")));?></td>
+                <td width="40%" valign="top"><?php e($form->input('ServiciosProgramados.id_colonia',array("id"=>"id_colonia","label"=>false,"type"=>"select","options"=>$Colonias,"empty"=>"-Colonias-","class"=>"form-control")));?></td>
+                <td width="40%" valign="top"><div id="divCalles"><?php e($form->input('ServiciosProgramados.id_calle',array("label"=>false,"type"=>"select","options"=>$Calles,"empty"=>"-Calles-","class"=>"form-control")));?></div></td>
+                <td width="20%" valign="top"><?php e($form->input('ServiciosProgramados.numero',array("label"=>false,"type"=>"text","size"=>"6",'placeholder'=>"Numero","class"=>"form-control")));?></td>
                </tr>
            </table>
        </td>
-       <td valign="top"><?php e($form->input('ServiciosProgramados.lunes',array("label"=>false,"type"=>"text","size"=>"3")));?></td>
+       <td valign="top"><?php e($form->input('ServiciosProgramados.lunes',array("label"=>false,"type"=>"text","size"=>"3","class"=>"form-control")));?></td>
 <!--        <td> -->
 	    <?php
-		e($form->input("ServiciosProgramados.LunGo",							array('type'=>'hidden',
+		e($form->input("ServiciosProgramados.LunGo",							
+            array('type'=>'hidden',
 					      'label'=>false,
 					      'style'=>'text-align:center;',
 					      'value'=>$hir
@@ -83,10 +81,11 @@ e($ajax->form(array("type"=>"post",
 	     );
 	    ?>
 <!--        </td> -->
-       <td valign="top"><?php e($form->input('ServiciosProgramados.martes',array("label"=>false,"type"=>"text","size"=>"3")));?></td>
+       <td valign="top"><?php e($form->input('ServiciosProgramados.martes',array("label"=>false,"type"=>"text","size"=>"3","class"=>"form-control")));?></td>
 <!--        <td> -->
 	    <?php
-		e($form->input("ServiciosProgramados.MarGo",							array('type'=>'hidden',
+		e($form->input("ServiciosProgramados.MarGo",
+            array('type'=>'hidden',
 					      'label'=>false,
 					      'style'=>'text-align:center;',
 					      'value'=>$hir
@@ -95,7 +94,7 @@ e($ajax->form(array("type"=>"post",
 	     );
 	    ?>
 <!--        </td> -->
-       <td valign="top"><?php e($form->input('ServiciosProgramados.miercoles',array("label"=>false,"type"=>"text","size"=>"3")));?></td>
+       <td valign="top"><?php e($form->input('ServiciosProgramados.miercoles',array("label"=>false,"type"=>"text","size"=>"3","class"=>"form-control")));?></td>
 <!--        <td> -->
 	    <?php
 		e($form->input("ServiciosProgramados.MieGo",
@@ -108,7 +107,7 @@ e($ajax->form(array("type"=>"post",
 	     );
 	    ?>
 <!--        </td> -->
-       <td valign="top"><?php e($form->input('ServiciosProgramados.jueves',array("label"=>false,"type"=>"text","size"=>"3")));?></td>
+       <td valign="top"><?php e($form->input('ServiciosProgramados.jueves',array("label"=>false,"type"=>"text","size"=>"3","class"=>"form-control")));?></td>
 <!--        <td> -->
 	    <?php
 		e($form->input("ServiciosProgramados.JueGo",
@@ -121,7 +120,7 @@ e($ajax->form(array("type"=>"post",
 	     );
 	    ?>
 <!--        </td> -->
-       <td valign="top"><?php e($form->input('ServiciosProgramados.viernes',array("label"=>false,"type"=>"text","size"=>"3")));?></td>
+       <td valign="top"><?php e($form->input('ServiciosProgramados.viernes',array("label"=>false,"type"=>"text","size"=>"3","class"=>"form-control")));?></td>
 <!--        <td> -->
 	    <?php
 		e($form->input("ServiciosProgramados.VieGo",
@@ -134,7 +133,7 @@ e($ajax->form(array("type"=>"post",
 	     );
 	    ?>
 <!--        </td> -->
-       <td valign="top"><?php e($form->input('ServiciosProgramados.sabado',array("label"=>false,"type"=>"text","size"=>"3")));?></td>
+       <td valign="top"><?php e($form->input('ServiciosProgramados.sabado',array("label"=>false,"type"=>"text","size"=>"3","class"=>"form-control")));?></td>
 <!--        <td> -->
 	    <?php
 		e($form->input("ServiciosProgramados.SabGo",
@@ -147,7 +146,7 @@ e($ajax->form(array("type"=>"post",
 	     );
 	    ?>
 <!--        </td> -->
-       <td valign="top"><?php e($form->input('ServiciosProgramados.domingo',array("label"=>false,"type"=>"text","size"=>"3")));?></td>
+       <td valign="top"><?php e($form->input('ServiciosProgramados.domingo',array("label"=>false,"type"=>"text","size"=>"3","class"=>"form-control")));?></td>
 <!--        <td> -->
 	    <?php
 		e($form->input("ServiciosProgramados.DomGo",
@@ -161,8 +160,9 @@ e($ajax->form(array("type"=>"post",
 	    ?>
 <!--        </td> -->
    </tr>
+   </tbody>
 </table>
-<?php e($form->submit("Registrar"));?>
+<?php e($form->submit("Registrar",array("class"=>"btn btn-info")));?>
 <?php
 e($ajax->observeField('id_colonia',
     array("url"=>array("controller"=>"ServiciosProgramados",

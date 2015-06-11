@@ -12,20 +12,14 @@ e($ajax->form(array("type"=>"post",
 ?>
 
 <?php //Edit Call and Go ?>
-
-<div id="action_menu">
-  <ul>
-  <li class='action_menu'>Telefonos Betados</li>
-  &nbsp;&nbsp;
-  <li class='action_menu'><?php e(date('Y-M-d'));?></li>
-  </ul>
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h3 class="panel-title">Telefonos Betados</h3>
+  </div>
+  <div class="panel-body">
+      <p><?php e(date('Y-M-d'));?></p>
+      <p><div class="form-group"><?php e($form->input('Phones.data',array('type'=>'text','label'=>'Edita Llama y cuelga','class'=>'form-control',"onKeyPress"=>"return soloNumeros(event)",'placeholder'=>'Buscar registro => Ingresa Numero de Telefono (alt+shift+b)')));?></div></p>
+  </div>
 </div>
-<table id="menu_info">
-	<tr />
-	  <td id="label" /><?php e($form->label('Phones.data','Edita Llama y cuelga',array('accesskey'=>'B')));?>
-	  <td /><?php e($form->input('Phones.data',array('type'=>'text','label'=>false,'class'=>'in_phone',"onKeyPress"=>"return soloNumeros(event)",'placeholder'=>'Buscar registro => Ingresa Numero de Telefono (alt+shift+b)')));?>
-
-</table>
-
 <?php e($form->end());?>
     <div id='divPhones'><?php include('show_phones.ctp');?></div>

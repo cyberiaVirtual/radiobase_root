@@ -5,3 +5,4 @@
 2015-06-10 02:30:16 Debug: Notice (8): Undefined index: turno in [C:\localhost\htdocs\radiobase\app\controllers\users_controller.php, line 115]
 2015-06-10 02:47:42 Debug: Notice (8): Undefined index: turno in [C:\localhost\htdocs\radiobase\app\controllers\users_controller.php, line 115]
 2015-06-10 06:41:21 Debug: Notice (8): Undefined index: turno in [C:\localhost\htdocs\radiobase_root\app\controllers\users_controller.php, line 115]
+2015-06-10 21:24:05 Debug: Notice (8): Undefined index: turno in [C:\localhost\htdocs\radiobase_root\app\controllers\users_controller.php, line 115]

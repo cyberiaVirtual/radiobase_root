@@ -13,30 +13,19 @@ e($ajax->form(array("type"=>"post",
 	$firefox = null;
       }
 ?>
-<div id="action_menu">
-  <ul>
-  <li class='action_menu'>Impresi&oacute;n de Reportes</li>
-  &nbsp;&nbsp;
-  <li class='action_menu'><?php e(date('Y-M-d'));?></li>
-  </ul>
-</div>
-<table id="menu_info">
-	<tr />
-	  <td id="label" />
-	      <?php 
-		  e($form->label('Reportes.data',
-				 'Buscar fecha',
-				 array('accesskey'=>'B')
-				)
-		   );
-	      ?>
-	  <td />
-	      <?php
+<div class="panel panel-default">
+  <div class="panel-heading">
+      <h3 class="panel-title">Impresi&oacute;n de Reportes</h3>
+  </div>
+  <div class="panel-body">
+      <p><?php e(date('Y-M-d'));?></p>
+      <p><div class="form-group">
+          <?php
 		if(!empty($firefox)){
 		  e($this->Form->input('Reportes.data',
 				    array('type' => 'date',
 					  'label'=>false,
-					  'class'=>'in_cal',
+					  'class'=>'form-control',
 					  'value'=>date('Y-m-d'),
 					  'dateFormat' => 'YMD',
 					  'minYear' => date('Y')-2,
@@ -51,7 +40,7 @@ e($ajax->form(array("type"=>"post",
 		  e($this->Form->input('Reportes.data',
 				    array('type' => 'text',
 					  'label'=>false,
-					  'class'=>'in_cal',
+					  'class'=>'form-control',
 					  'value'=>date('Y-m-d'),
 					  "onKeyPress"=>"return soloNumeros(event)",
 					  'placeholder'=>'Buscar registro => Ingresa Fecha en formato (yy-mm-dd) (alt+shift+b)'
@@ -62,7 +51,7 @@ e($ajax->form(array("type"=>"post",
 		  e($this->Form->text('Reportes.data',
 				    array('type' => 'date',
 					  'label'=>false,
-					  'class'=>'in_cal',
+					  'class'=>'form-control',
 					  'value'=>date('Y-m-d'),
 					  'dateFormat' => 'YMD',
 					  'min' => '2010-08-14',
@@ -75,11 +64,14 @@ e($ajax->form(array("type"=>"post",
 		   );
 		}
 	      ?>
-	  <td />
-	      <?php
-		  e($form->button('Enviar',array("label"=>false)));
+      </div></p>
+      <p>
+		  <?php
+		  e($form->button('Enviar',array("label"=>false,"class"=>"btn btn-info")));
 	      ?>
-</table>
+      </p>
+  </div>
+</div>
 
 <?php e($form->end());?>
     <div id='divReportes'>

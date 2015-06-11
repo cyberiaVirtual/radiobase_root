@@ -12,39 +12,27 @@
 ?>
 
 <?php //Edit Call and Go ?>
-
-<div id="action_menu">
-<ul>
-<li class='action_menu'>Unidades Fuera de la Ciudad</li>
-&nbsp;&nbsp;
-<li class='action_menu'><?php e(date('Y-M-d'));?></li>
-</ul>
-</div>
-<table id="menu_info">
-<tr />
-<td id="label" />
-    <?php
-	e($form->label('UnidadesFueraCiudad.data',
-		       'Buscar Unidad',
-		       array('accesskey'=>'B'
-		       )
-		      )
-	  );
-    ?>
-<td />
-    <?php
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h3 class="panel-title">Unidades Fuera de la Ciudad</h3>
+  </div>
+  <div class="panel-body">
+      <p><?php e(date('Y-M-d'));?></p>
+      <p><div class="form-group"><?php
 	e($form->input('UnidadesFueraCiudad.data',
 			array('type'=>'text',
-			      'label'=>false,
-			      'class'=>'in_buscar',
+			      'label'=>'Buscar Unidad',
+			      'class'=>'form-control',
 			      "onKeyPress"=>"return soloNumeros(event)",
 			      'placeholder'=>'Buscar registro => Ingresa Numero de Unidad (alt+shift+b)'
 			     )
 		      )
 	  );
-    ?>
+  
+    ?></div></p>
+  </div>
+</div>
 
-</table>
 
 <?php e($form->end());?>
 <div id='divUnidades'><?php include('show_unidades_fuera_ciudad.ctp');?></div>
