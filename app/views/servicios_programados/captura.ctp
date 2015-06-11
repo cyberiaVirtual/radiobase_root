@@ -32,6 +32,7 @@ e($ajax->form(array("type"=>"post",
     
 <!-- <fieldset> -->
 <!--     <legend>Nuevo Servicio Programado</legend> -->
+<div class="table-responsive">
 <table id="menu_info" class="table table-striped table-bordered table-hover table-condensed">
     <thead>
   <tr align="center">
@@ -55,7 +56,7 @@ e($ajax->form(array("type"=>"post",
   </thead>
   <tbody>
   <tr align="center">
-       <!--<td valign="top"><?php 
+       <!--<td valign="top"><?php
 //                 e($form->input('ServiciosProgramados.hora',array("label"=>false,"type"=>"text","size"=>"10","MaxLength"=>"4")));
            ?>
        </td>-->
@@ -391,6 +392,7 @@ if(count($Registros)>0)
   }
 ?>
 </table>
+</div>
 <?php e($form->submit("Act. Datos"));?>
 <!-- </fieldset> -->
 <?php

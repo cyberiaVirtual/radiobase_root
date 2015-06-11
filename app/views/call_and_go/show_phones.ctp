@@ -1,5 +1,6 @@
 <?php //show_phones.ctp ?>
 <?php if(!empty($phones)){?>
+<div class="table-responsive">
 <table id="menu_info"  class="table table-striped table-bordered table-hover table-condensed">
 <?php
 //     if(!empty($paginate_phones)){
@@ -61,7 +62,7 @@
     <?php } //end foreach?>
       </tbody>
 </table>
-
+</div>
 <?php
 //     if(isset($this->Paginator)){
 // 	$numbers = $this->Paginator->numbers();

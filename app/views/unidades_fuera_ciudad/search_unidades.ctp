@@ -9,6 +9,7 @@ e($ajax->form(array("type"=>"post",
              )
  );
 ?>
+<div class="table-responsive">
 <table id="menu_info" class="table table-striped table-bordered table-hover table-condensed">
 <?php
 if(!empty($UnidadesFueraCiudad)){
@@ -126,6 +127,7 @@ if(!empty($UnidadesFueraCiudad)){
 ?>
     </tbody>
 </table>
+</div>
 <?php
 e($form->submit('Agregar'));
 ?>

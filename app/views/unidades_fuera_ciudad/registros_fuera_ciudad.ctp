@@ -11,6 +11,7 @@ if(count($Registros)>0)
                     )
      );
 ?>
+<div class="table-responsive">
 <table class="table table-striped table-bordered table-hover table-condensed">
     <thead>
         <tr align="center" bgcolor="#537BB0">
@@ -48,6 +49,7 @@ if(count($Registros)>0)
     <tr><td align="right" colspan="5">&nbsp;</td><td colspan="2" align="center"><?php e($form->submit("Act. Datos"));?></td></tr>
 </tbody>
 </table>
+</div>
 <?php
 }
 e($form->end());

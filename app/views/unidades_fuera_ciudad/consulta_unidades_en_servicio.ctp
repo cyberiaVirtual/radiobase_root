@@ -11,6 +11,7 @@ e($ajax->form(array("type"=>"post",
  );
 
 ?>
+<div class="table-responsive">
 <table class="table table-striped table-bordered table-hover table-condensed">
     <thead>
       <tr align="center">
@@ -34,6 +35,7 @@ e($ajax->form(array("type"=>"post",
       </tr>
     </tbody>
 </table>
+</div>
 <?php
   e($form->end());
 }
