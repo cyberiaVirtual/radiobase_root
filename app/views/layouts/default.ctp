@@ -103,7 +103,7 @@
                 ?>
                     <div class="container-fluid">
                        <div class="row">
-                           <?php e($html->image("header_app.jpeg",array('class'=>'img-responsive')));?>
+                           <?php e($html->image("header_app.jpeg",array('class'=>'img-responsive img-thumbnail')));?>
 
                        </div>
                     </div>
