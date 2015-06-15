@@ -19,9 +19,66 @@
   <!--[if lt IE 9]>
     <script src="js/html5shiv.js"></script>
   <![endif]-->
+  
+  
+	<?php
+		/** NOTE @begin->devoops */
+		$theme = 'devoops/';
+
+		/** NOTE prototype **/
+		e($this->Html->script($theme.'prototype/prototype'));
+		e($this->Html->script($theme.'scriptaculous/scriptaculous.js?load=effects'));
+
+		/** @require*/
+		e($this->Html->script($theme.'require/require'));
+	?>
+	<script>
+	require.config({
+		baseUrl: './',
+		paths: {
+			'jquery': "<?php e($this->webroot.'js/devoops/jquery/jquery.min');?>",
+			'bootstrap': "<?php e($this->webroot.'js/devoops/bootstrap/bootstrap.min');?>"
+		},
+		shim: {
+			'bootstrap': ['jquery']
+		},
+		map: {
+			'*': {
+				'jquery': 'jQueryNoConflict'
+			},
+			'jQueryNoConflict': {
+				'jquery': 'jquery'
+			}
+		}
+	});
+	define('jQueryNoConflict', ['jquery'], function ($) {
+		return $.noConflict();
+	});
+	if (Prototype.BrowserFeatures.ElementExtensions) {
+		require(['jquery', 'bootstrap'], function ($) {
+			// Fix incompatibilities between BootStrap and Prototype
+			var disablePrototypeJS = function (method, pluginsToDisable) {
+					var handler = function (event) {  
+						event.target[method] = undefined;
+						setTimeout(function () {
+							delete event.target[method];
+						}, 0);
+					};
+					pluginsToDisable.each(function (plugin) { 
+						$(window).on(method + '.bs.' + plugin, handler); 
+					});
+				},
+				pluginsToDisable = ['collapse', 'dropdown', 'modal', 'tooltip', 'popover', 'tab'];
+			disablePrototypeJS('show', pluginsToDisable);
+			disablePrototypeJS('hide', pluginsToDisable);
+		});
+	}
+	</script>
+
+	
     <?php
-        e($this->Html->script('jquery.min'));
-        e($this->Html->script('bootstrap.min'));
+//         e($this->Html->script('jquery.min'));
+//         e($this->Html->script('bootstrap.min'));
         e($this->Html->script('scripts'));
     ?>
 </head>
@@ -103,7 +160,7 @@
                 ?>
                     <div class="container-fluid">
                        <div class="row">
-                           <?php e($html->image("header_app.jpeg",array('class'=>'img-responsive')));?>
+                           <?php e($html->image("header_app.jpeg",array('class'=>'img-responsive img-thumbnail')));?>
 
                        </div>
                     </div>

@@ -5,7 +5,6 @@ class User extends AppModel {
         'full_name' => "CONCAT(User.first_name, ' ', User.last_name)",
     );
     var $recursive = 2;
-   
       
     var $validate = array(
         'username' => array(
