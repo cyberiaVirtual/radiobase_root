@@ -12,6 +12,7 @@
 //                     )
 //      );
 ?>
+<div class="table-responsive">
 <table id="menu_info"  class="table table-striped table-bordered table-hover table-condensed">
 <thead>
 <tr />
@@ -112,6 +113,7 @@
 ?>
      </tbody>
 </table>
+
 <?php
 
     }else{
@@ -119,5 +121,5 @@
 	e("<div id='warning' >Sin registros aun </div>");
 
     }
-
 ?>
+</div>

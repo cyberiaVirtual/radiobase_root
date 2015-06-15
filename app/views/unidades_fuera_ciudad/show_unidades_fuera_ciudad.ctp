@@ -12,6 +12,7 @@ e($ajax->form(array("type"=>"post",
              )
  );
 ?>
+<div class="table-responsive">
 <table id="menu_info" class="table table-striped table-bordered table-hover table-condensed">
     <thead>
     <tr />
@@ -62,6 +63,7 @@ e($ajax->form(array("type"=>"post",
         <?php } //end foreach?>
     </tbody>
 </table>
+</div>
 <?php
 	e($form->submit('Actualizar'));
 	e($form->end());

@@ -1,4 +1,5 @@
 <?php //ShowOperators ?>
+<div class="table-responsive">
 <table id="menu_info"  class="table table-striped table-bordered table-hover table-condensed">
     <thead>
         <tr />
@@ -19,3 +20,4 @@
         <?php } //end foreach?>
     </tbody>
 </table>
+</div>
