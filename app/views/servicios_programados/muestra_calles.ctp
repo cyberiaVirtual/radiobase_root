@@ -4,7 +4,8 @@
                    "label"=>false,
                    "type"=>"select",
                    "options"=>$Calles,
-                   "empty"=>"-Calles-"
+                   "empty"=>"-Calles-",
+                   "class"=>"form-control"
                   ))
     );
     

@@ -19,6 +19,7 @@
 					      'label'=>false,
 					      "type"=>"text",
 					      "readonly"=>true,
+                          "class" =>"form-control",
 					      'style'=>'text-align:center;'
 					      )
 			      );
@@ -29,7 +30,7 @@
 					      'label'=>false,
 					      "type"=>"text",
 					      "readonly"=>true,
-// 					      'size'=>'2',
+ 					      "class" =>"form-control",
 					      'style'=>'text-align:center;'
 					      )
 			      );
@@ -40,7 +41,7 @@
 					      'label'=>false,
 					      "type"=>"text",
 					      "readonly"=>true,
-					      'size'=>'5',
+                          "class" =>"form-control",
 					      'style'=>'text-align:center;'
 					      )
 			      );
@@ -51,7 +52,7 @@
 					      'label'=>false,
 					      "type"=>"text",
 					      "readonly"=>$readonly_in,
-					      'size'=>'5',
+					      "class" =>"form-control",
 					      'style'=>'text-align:center;'
 					      )
 			      );
@@ -61,7 +62,7 @@
 					array('label'=>false,
 					      "type"=>"text",
 					      "readonly"=>$readonly_out,
-					      'size'=>'5',
+					      "class" =>"form-control",
 					      'style'=>'text-align:center;',
 					      'value'=>$salida
 					      )
@@ -74,10 +75,13 @@
 				    array('accesskey'=>'P')
 			  )
 	      );
-	    e($form->input("UnidadesEnServicio.pase_de_lista",									array('type'=>'checkbox',
+   
+	    e($form->input("UnidadesEnServicio.pase_de_lista",									
+                    array('
+            type'=>'checkbox',
 						  'label'=>false,
 						  'style'=>'text-align:center;',
-						  'class'=>'checkbox',
+						  'class'=>'form-control',
 						  'checked'=>$hir
 						 )
 			  )
@@ -113,7 +117,7 @@
 					array('label'=>false,
 					      "type"=>"text",
 					      "readonly"=>$readonly_ini[$i],
-					      'size'=>'5',
+					      "class" =>"form-control",
 					      'style'=>'text-align:center;',
 					      'value'=>$FueraDeMomento['FueraDeMomento']["hora_ini_$i"]
 					      )
@@ -125,7 +129,7 @@
 					array('label'=>false,
 					      "type"=>"text",
 					      "readonly"=>$readonly_fin[$i],
-					      'size'=>'5',
+					      "class" =>"form-control",
 					      'style'=>'text-align:center;',
 					      'value'=>$FueraDeMomento['FueraDeMomento']["hora_fin_$i"]
 					      )
@@ -138,7 +142,7 @@
 					array('label'=>false,
 					      "type"=>"text",
 					      "readonly"=>$readonly_ch[$i],
-					      'size'=>'1',
+					      "class" =>"form-control",
 					      'style'=>'text-align:center;',
 					      'value'=>$canal['CambioCanal']["canal_$i"],
 					      'lenght'=>'1'
@@ -150,7 +154,7 @@
 					array('label'=>false,
 					      "type"=>"hidden",
 					      "readonly"=>true,
-					      'size'=>'5',
+					      "class" =>"form-control",
 					      'value'=>$FueraDeMomento['FueraDeMomento']['id']
 					      )
 			      );
@@ -159,8 +163,7 @@
 					array('label'=>false,
 					      "type"=>"hidden",
 					      "readonly"=>false,
-					      'size'=>'5',
-					      'class'=>'pase_de_lista',
+					      "class" =>"form-control",
 					      'value'=> "$id_movil"
 					      )
 			      );
@@ -169,8 +172,7 @@
 					array('label'=>false,
 					      "type"=>"hidden",
 					      "readonly"=>false,
-					      'size'=>'5',
-					      'class'=>'pase_de_lista',
+					      "class" =>"form-control",
 					      'value'=> "$turno"
 					      )
 			      );
@@ -179,8 +181,7 @@
 					array('label'=>false,
 					      "type"=>"hidden",
 					      "readonly"=>false,
-					      'size'=>'5',
-					      'class'=>'pase_de_lista',
+					      "class" =>"form-control",
 					      'value'=> date('Y-m-d')
 					      )
 			      );
@@ -189,8 +190,7 @@
 					array('label'=>false,
 					      "type"=>"hidden",
 					      "readonly"=>false,
-					      'size'=>'5',
-					      'class'=>'pase_de_lista',
+					      "class" =>"form-control",
 					      'value'=> "$id_movil"
 					      )
 			      );
@@ -199,8 +199,7 @@
 					array('label'=>false,
 					      "type"=>"hidden",
 					      "readonly"=>false,
-					      'size'=>'5',
-					      'class'=>'pase_de_lista',
+					      "class" =>"form-control",
 					      'value'=> "$turno"
 					      )
 			      );
@@ -209,8 +208,7 @@
 					array('label'=>false,
 					      "type"=>"hidden",
 					      "readonly"=>false,
-					      'size'=>'5',
-					      'class'=>'pase_de_lista',
+					      "class" =>"form-control",
 					      'value'=> date('Y-m-d')
 					      )
 			      );
@@ -219,8 +217,7 @@
 					array('label'=>false,
 					      "type"=>"hidden",
 					      "readonly"=>false,
-					      'size'=>'5',
-					      'class'=>'pase_de_lista',
+					      "class" =>"form-control",
 					      'value'=> $canal['CambioCanal']['id']
 					      )
 			      );
@@ -229,8 +226,7 @@
 					array('label'=>false,
 					      "type"=>"hidden",
 					      "readonly"=>false,
-					      'size'=>'5',
-					      'class'=>'pase_de_lista',
+					      "class" =>"form-control",
 					      'value'=> $turno
 					      )
 			      );
@@ -239,8 +235,7 @@
 					array('label'=>false,
 					      "type"=>"hidden",
 					      "readonly"=>false,
-					      'size'=>'5',
-					      'class'=>'pase_de_lista',
+					      "class" =>"form-control",
 					      'value'=> date('Y-m-d')
 					      )
 			      );
@@ -258,12 +253,17 @@
 <!--     <td colspan='19' />&nbsp; -->
   <?php
   App::Import('Vendor','radiobase/EndServicioMenu');
-  echo $form->submit('Enviar');
+  e($form->submit('Enviar',array("class"=>"btn btn-info")));
+  e('<br/>');
 
       e($form->end());
       }else{
-	e("<div id='warning'>No se encontró Unidad en Servicio</div>");
+	        e('<div class="alert alert-warning" role="alert">
+                <a class="close" data-dismiss="alert">×</a>
+                <strong>Sin Resultados!</strong> Intente de nuevo...
+              </div>');
       }
+     
 //       pr($UnidadesEnServicio);
 //       pr($operators);
 //       pr($canal);

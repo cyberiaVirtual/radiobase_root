@@ -12,6 +12,7 @@
 //                     )
 //      );
 ?>
+
 <div class="table-responsive">
 <table id="menu_info"  class="table table-striped table-bordered table-hover table-condensed">
 <thead>
@@ -118,7 +119,10 @@
 
     }else{
 
-	e("<div id='warning' >Sin registros aun </div>");
+            e('<div class="alert alert-warning" role="alert">
+                <a class="close" data-dismiss="alert">×</a>
+                <strong>Sin Registros aún!</strong>
+              </div>');
 
     }
 ?>

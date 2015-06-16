@@ -1,5 +1,12 @@
-<?php ?> 
-<table id="menu_info">
+<?php ?>
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h3 class="panel-title">Resultados</h3>
+  </div>
+  <div class="panel-body">
+      <div class="table-responsive">
+<table id="menu_info" class="table table-striped table-bordered table-hover table-condensed">
+    <thead>
   <th />ID
   <th colspan="4"/>Unidades En Servicio
   <th />Lista
@@ -26,7 +33,11 @@
       }
     ?>
     <td />C/U
+</thead
 
 <!--     code of the form..... -->
 <!-- </table> -->
 
+</div>
+  </div>
+</div>
