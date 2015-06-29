@@ -90,7 +90,10 @@ class ServiciosProgramadosController extends AppController
                     $this->Captura();
                     $this->data['ServiciosProgramados'] = $data;   
                     $this->muestraCalles();
-                    e('<div class="warning">Debe seleccionar la Colonia y Calle correspondiente</div>');
+                    e('<div class="alert alert-warning" role="alert">
+                        <a class="close" data-dismiss="alert">×</a>
+                        <strong>Debe seleccionar la Colonia y Calle correspondiente!</strong>
+                      </div>');
                     $this->render('captura','ajax');
                 }
         }else
@@ -99,7 +102,10 @@ class ServiciosProgramadosController extends AppController
                     $this->Captura();
                     $this->data['ServiciosProgramados'] = $data;   
                     $this->muestraCalles();
-                    e('<div class="warning">Debe ingresar una hora [HHMM]</div>');
+                    e('<div class="alert alert-warning" role="alert">
+                        <a class="close" data-dismiss="alert">×</a>
+                        <strong>Debe ingresar un formato válido de hora [HHMM]!</strong>
+                      </div>');
                     $this->render('captura','ajax');
                 }
     }

@@ -81,6 +81,8 @@
 //         e($this->Html->script('jquery.min'));
 //         e($this->Html->script('bootstrap.min'));
         e($this->Html->script('scripts'));
+        e($this->Html->script('ajaxManual'));
+        
     ?>
 </head>
 

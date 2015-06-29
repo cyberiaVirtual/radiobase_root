@@ -69,7 +69,8 @@ e($ajax->form(array("type"=>"post",
 	e($form->end());
 	e('<br /><br />');
     }else{
-	e('<div id="warning"> Aun no existen Registros </div>');
+            e('<div class="alert alert-warning" role="alert">
+                <a class="close" data-dismiss="alert">×</a>
+                <strong>Sin Registros aún!</strong>
+              </div>');
       }
-?>
-
