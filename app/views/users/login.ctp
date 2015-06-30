@@ -8,12 +8,13 @@ echo $form->create('User', array('action' => 'login','id'=>'form2','class'=>'for
   </div>
   <div class="panel-body">
       <p>
-        <div class="form-group">
-        <label for="inputEmail3" class="col-sm-2 control-label">Usuario</label>
+        <div class="form-group" id="formLogin">
+        <label class="col-sm-2 control-label">Usuario</label>
         <div class="col-sm-10">
             <?php echo $form->input('username',
                 array("label"=>false,
-                  "class"=>"form-control"
+                  "class"=>"form-control",
+                    "id" => "username"
 
                  )
                );

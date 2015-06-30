@@ -140,3 +140,10 @@ function jsClock24hr(){
   document.clockForm24hr.digits.value = temp
   id = setTimeout("jsClock24hr()",1000)
 }
+
+function loginForm(){
+    
+ $("log_in_button").click(function(){
+    $("username").slideDown();
+}); 
+}
