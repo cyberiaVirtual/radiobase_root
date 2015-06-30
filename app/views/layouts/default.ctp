@@ -143,7 +143,7 @@
                         if(!isset($_SESSION['Auth']['User']['id']))
                         {
                         ?>
-                            <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Entrar</a></li>
+                      <li><a href="#" onclick="loginForm();return false;" id="log_in_button"><span class="glyphicon glyphicon-log-in"></span> Entrar</a></li>
                         <?php
                         }else{
                             ?>
