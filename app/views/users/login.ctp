@@ -1,7 +1,7 @@
 <?php
 echo $form->create('User', array('action' => 'login','id'=>'form2','class'=>'form-horizontal','role'=>'form'));
 ?>
-
+<section  id="log_in_panel" style="display: none;">
 <div class="panel panel-default">
   <div class="panel-heading">
     <h3 class="panel-title">Iniciar Sesión</h3>
@@ -44,4 +44,5 @@ echo $form->create('User', array('action' => 'login','id'=>'form2','class'=>'for
     </p>
   </div>
 </div>
-<?php echo $form->end();
+</section>
+<?php echo $form->end();?>

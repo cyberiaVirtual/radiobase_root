@@ -38,7 +38,8 @@
 		baseUrl: './',
 		paths: {
 			'jquery': "<?php e($this->webroot.'js/devoops/jquery/jquery.min');?>",
-			'bootstrap': "<?php e($this->webroot.'js/devoops/bootstrap/bootstrap.min');?>"
+			'bootstrap': "<?php e($this->webroot.'js/devoops/bootstrap/bootstrap.min');?>",
+            'scripts': "<?php e($this->webroot.'js/scripts');?>"
 		},
 		shim: {
 			'bootstrap': ['jquery']
@@ -80,9 +81,7 @@
     <?php
 //         e($this->Html->script('jquery.min'));
 //         e($this->Html->script('bootstrap.min'));
-        e($this->Html->script('scripts'));
         e($this->Html->script('ajaxManual'));
-        
     ?>
 </head>
 
@@ -143,7 +142,7 @@
                         if(!isset($_SESSION['Auth']['User']['id']))
                         {
                         ?>
-                      <li><a href="#" onclick="loginForm();return false;" id="log_in_button"><span class="glyphicon glyphicon-log-in"></span> Entrar</a></li>
+                      <li><a href="#" id="log_in_button"><span class="glyphicon glyphicon-log-in"></span> Entrar</a></li>
                         <?php
                         }else{
                             ?>
@@ -205,3 +204,16 @@
 </div>
 </body>
 </html>
+
+<script>
+require(['jquery', 'bootstrap','scripts'], function($) { // <--- Aqui llamamos a la libreria junto con jquery y bootstrap
+    $(document).ready(function () {
+        $(function() {
+            $('#log_in_button').click(function(){
+                loginForm();
+                return false;
+            });
+        });
+    });
+});
+</script>
