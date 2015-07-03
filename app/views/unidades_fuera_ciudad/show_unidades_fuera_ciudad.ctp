@@ -34,13 +34,16 @@ e($ajax->form(array("type"=>"post",
           <div id="divEditUnit">
           <td id="update" /><span>
         <?php
-                e($form->input("UnidadesFueraCiudad.$key.id",										array('type'=>'hidden',
+                e($form->input("UnidadesFueraCiudad.$key.id",										
+                        array('type'=>'hidden',
                               'label'=>false,
                               'value'=>$unidades[$key]['UnidadesFueraCiudad']['id']
                              )
                    )
               );
-                e($form->input("UnidadesFueraCiudad.$key.hora_llegada",								array('type'=>'text',
+                e($form->input("UnidadesFueraCiudad.$key.hora_llegada",								
+                        array('type'=>'text',
+                              'class'=>'form-control',
                               'label'=>false,
                               'value'=>$unidades[$key]['UnidadesFueraCiudad']['hora_llegada']
                          )
@@ -50,7 +53,9 @@ e($ajax->form(array("type"=>"post",
             </span>
           <td id="update" /><span>
         <?php
-            e($form->input("UnidadesFueraCiudad.$key.mom_r",									array('type'=>'checkbox',
+            e($form->input("UnidadesFueraCiudad.$key.mom_r",									
+                        array('type'=>'checkbox',
+                              'class'=>'form-control',
                               'label'=>false,
                               'checked'=>$unidades[$key]['UnidadesFueraCiudad']['mom_r']
                              )
@@ -65,7 +70,7 @@ e($ajax->form(array("type"=>"post",
 </table>
 </div>
 <?php
-	e($form->submit('Actualizar'));
+	e($form->submit('Actualizar',array("class"=>"btn btn-info")));
 	e($form->end());
 	e('<br /><br />');
     }else{

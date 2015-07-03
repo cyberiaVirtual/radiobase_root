@@ -84,14 +84,20 @@
     $conditions['Phones.phone'] = $this->data['Phones']['data'];
     $RetPhone = $this->Phones->find('first',array('conditions'=>$conditions));
     if(empty($RetPhone)){
-	e('<div id="warning"><span>El Telefono No se Encuentra en el Registro</span></div>');
-	e('<div id="warning"><span>Llena los Siguientes Campos para Registrar el N&uacute;mero Telefonico</span></div>');
+        e('<div class="alert alert-warning" role="alert">
+                <a class="close" data-dismiss="alert">×</a>
+                El Telefono<strong> No se Encuentra en el Registro</strong>
+              </div>
+              <div class="alert alert-success" role="alert">
+                <a class="close" data-dismiss="alert">×</a>
+                Llena los Siguientes Campos para Registrar el Número Telefónico
+              </div><div class="clear"></div>');
     }
 	$this->set('FindPhone',$RetPhone);
 	$this->ShowPhones();
 
     }
-
+    
     function EditPhones(){
 	if(empty($this->data)){
 	  $this->read($this->data);
@@ -106,7 +112,10 @@
 	  }else{
 	      if(empty($this->data['Phones']['phone']) OR empty($this->data['Calles']['colonia']) OR /*empty($this->data['Phones']['id_calle']) OR*/ empty($this->data['Phones']['numero'])){
 
-	      e('<div id="warning">Los Campos (*) Son Obligatorios</div>');
+           e('<div class="alert alert-danger" role="alert">
+                <a class="close" data-dismiss="alert">×</a>
+                Los Campos (*)<strong> Son Obligatorios</strong>
+              </div>');
 		  $this->redirect(array('action' => 'SearchPhones'));
 	      
 	      }else{
@@ -126,7 +135,7 @@
 	      }
 	  }
 	}
-	  $this->ShowPhones();
+	  $this->ShowPhones();exit();
 	  $this->render('ShowPhones','ajax');
     }
 

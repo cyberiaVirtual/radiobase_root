@@ -116,7 +116,10 @@ class UnidadesFueraCiudadController extends AppController
 		$opconditions['Operadores.id_movil'] = $id_movil;
 		$rstOp = $this->Operadores->find('first',array('conditions'=>$opconditions));
 		$result['UnidadesEnServicio']['id_movil'] = $rstOp['Operadores']['id_movil'];
-		e('<div id="warning"><span>La Unidad no se encuentra en el "Pase de Lista"</span></div>');
+        e('<div class="alert alert-warning" role="alert">
+                <a class="close" data-dismiss="alert">×</a>
+                La Unidad no se encuentra en el <strong>"Pase de Lista"</strong>
+              </div>');
 	    }
 	    $localidades = $this->localidades(1);
 	    $localidades[0] = 'Agregar';
@@ -128,7 +131,10 @@ class UnidadesFueraCiudadController extends AppController
 	    $this->set('UnidadesFueraCiudad',$result);
 	    $this->set('username',$username);
 	    }else{
-		e('<div id="warning">Introduzca un Numero de Movil</div>');
+             e('<div class="alert alert-warning" role="alert">
+                <a class="close" data-dismiss="alert">×</a>
+                <strong>Introduzca un Numero de Movil</strong>
+              </div>');
 	    } // End movil filter
 	}
 
@@ -136,9 +142,15 @@ class UnidadesFueraCiudadController extends AppController
 	    if(empty($this->data)){
 		$this->read($this->data);
 	    }if(empty($this->data['UnidadesFueraCiudad']['id_localidad'])){
-		e('<div id="warning"><span>Seleccione una localidad</span></div>');
+            e('<div class="alert alert-warning" role="alert">
+                <a class="close" data-dismiss="alert">×</a>
+                <strong>Seleccione una localidad</strong>
+              </div>');
 	    }if(empty($this->data['UnidadesFueraCiudad']['id_tpo_servicio_a'])){
-		e('<div id="warning"><span>Seleccione un Servicio</span></div>');
+            e('<div class="alert alert-warning" role="alert">
+                <a class="close" data-dismiss="alert">×</a>
+                <strong>Seleccione un Servicio</strong>
+              </div>');
 	    }else{
 // 		pr($this->data);
 		$TpoServicio = $this->tpo_servicio(1);
@@ -167,7 +179,10 @@ class UnidadesFueraCiudadController extends AppController
 		    $tpo_servicio = "$n_tpo_1 $tpo_1 , $n_tpo_2 $tpo_2";
 		    $this->data['UnidadesFueraCiudad']['tpo_servicio'] = $tpo_servicio;
 		}elseif( ( empty($this->data['UnidadesFueraCiudad']['id_tpo_servicio_a']) && empty($this->data['UnidadesFueraCiudad']['id_tpo_servicio_b']) )&& empty($this->data['TpoServicio']['tpo_servicio'])){
-		    e('<div id="warning">Seleccione un Servicio</div>');
+		    e('<div class="alert alert-warning" role="alert">
+                <a class="close" data-dismiss="alert">×</a>
+                <strong>Seleccione un Servicio</strong>
+              </div>');
 		}
 // 		pr($this->data);exit();
 	    if(isset($this->data['UnidadesFueraCiudad'])){
@@ -193,7 +208,10 @@ class UnidadesFueraCiudadController extends AppController
 			$this->TpoServicio->save($this->data['TpoServicio']);
 			$id_tpo_servicio = $this->TpoServicio->getLastInsertId();
 		}else{
-			e('<div id="warning"><span>Registro Creado</span></div>');
+            e('<div class="alert alert-success" role="alert">
+                <a class="close" data-dismiss="alert">×</a>
+                <strong>Registro Creado</strong>
+              </div>');
 		}
 		if(isset($id_localidad)){
 		    $this->data['UnidadesFueraCiudad']['id_localidad'] = $id_localidad;
@@ -205,7 +223,10 @@ class UnidadesFueraCiudadController extends AppController
 // pr($this->data);exit();
 		$this->UnidadesFueraCiudad->save($this->data['UnidadesFueraCiudad']);
 		}else{
-		    e('<div id="warning"><span>A ocurrido un Error</span></div>');
+            e('<div class="alert alert-danger" role="alert">
+                <a class="close" data-dismiss="alert">×</a>
+                <strong>Ha ocurrido un Error</strong>
+              </div>');
 		}
 
 	    }
@@ -228,7 +249,10 @@ class UnidadesFueraCiudadController extends AppController
 		$this->UnidadesFueraCiudad->set($this->data['UnidadesFueraCiudad']);
 		if($this->UnidadesFueraCiudad->saveAll()){
 		    $this->layout=false;
-		    e('<pre>Registros Actualizados</pre>');
+            e('<div class="alert alert-success" role="alert">
+                <a class="close" data-dismiss="alert">×</a>
+                <strong>Registros Actualizados</strong>
+              </div>');
 		}
 		}
 	    }

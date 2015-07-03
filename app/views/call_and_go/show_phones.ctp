@@ -21,7 +21,7 @@
       <th />ID
       <th />Colonia
       <th />Calle
-      <th />N&uacute;mero
+      <th />Número
       <th />Telefono
       <th />Llama y cuelga
       <th />Borrar
@@ -90,5 +90,4 @@
                 <a class="close" data-dismiss="alert">×</a>
                 <strong>Sin Registros aún!</strong>
               </div>');
-      }	
-?>
+      }

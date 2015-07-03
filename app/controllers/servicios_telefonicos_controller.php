@@ -7,18 +7,19 @@
       var $helpers = array('Html','Form','Ajax','Javascript');
       var $uses = array('ServiciosTelefonicos','Operadores','UnidadesEnServicio','Ciudades','Localidades','Colonias','Calles','Phones','Cp');
 
-    function street(){
-
-      $st = $this->Calles->find('all');
-      if(!empty($st)){
-	foreach( $st as $key => $value ){
-	  $street[ $st[$key]['Calles']['id_calle'] ] = $st[$key]['Calles']['calle'];
-	}
-      }else{
-	$street=null;
-      }
-
-      $this->set('street',$street);
+    function street()
+    {
+        $st = $this->Calles->find('all');
+        if(!empty($st))
+        {
+            foreach( $st as $key => $value )
+            {
+                $street[ $st[$key]['Calles']['id_calle'] ] = $st[$key]['Calles']['calle'];
+            }
+        }else{
+            $street=null;
+        }
+        $this->set('street',$street);
     } //End street
 
     function colonias(){
@@ -81,11 +82,14 @@
 	}
 	
 	function SearchPhone() {
-//   	  pr($this->data['Phones']);exit();
 	if(empty($this->data['Phones']['data'])){
-	    e('<div id="warning"><span>Ingrese un Numero Telef&oacute;nico</span></div>');
+         e('<div class="alert alert-warning" role="alert">
+                <a class="close" data-dismiss="alert">×</a>
+                Ingrese un <strong>Número Telefónico</strong>
+              </div>');
 	    exit();
 	}
+    
 	$search_address = null ;
 	$search_phone = null ;
 	$search_movil = null ;
@@ -123,9 +127,17 @@
 
 	if(empty($RetMovil)){
 	    $Movil = $search_movil;
-	    e('<div id="warning"><span>La Unidad no se encuentra en el "Pase de Lista"</span></div>');
+        e('<div class="alert alert-warning" role="alert">
+                <a class="close" data-dismiss="alert">×</a>
+                La Unidad no se encuentra en el <strong>"Pase de Lista"</strong>
+              </div>');
+        
 	    if($Movil > 60){
-	      e('<div id="warning"><span>La Unidad no Existe</span></div>');
+             e('<div class="alert alert-warning" role="alert">
+                <a class="close" data-dismiss="alert">×</a>
+                La <strong>Unidad no Existe</strong>
+              </div>');
+	      
 	    }
 	}else{
 	    $Movil = $RetMovil['UnidadesEnServicio']['id_movil'];
@@ -133,7 +145,10 @@
 	
 	$retPhone = $this->Phones->find('first',array('conditions'=>$conditions));
 	if($retPhone['Phones']['call_and_go'] == 1 ){
-	    e('<div id="warning"><span>Este Numero Telefonico pertenece al apartado "Llama y Cuelga"</span></div>');
+	    e('<div class="alert alert-warning" role="alert">
+                <a class="close" data-dismiss="alert">×</a>
+                Este Número Telefónico pertenece al apartado <strong>"Llama y Cuelga"</strong>
+              </div>');
 	    $Movil = '0' ;
 	}
 	
@@ -163,9 +178,15 @@
 	if(empty($this->data)){
 	  $this->read($this->data);
 	}if(empty($this->data['Calles']['id_colonia']) AND empty($this->data['ServiciosTelefonicos']['id_colonia'])){
-	    e('<div id="warning"><span>Seleccione una Colonia</span></div>');
+	    e('<div class="alert alert-warning" role="alert">
+                <a class="close" data-dismiss="alert">×</a>
+                Seleccione una<strong>Colonia</strong>
+              </div>');
 	}if(empty($this->data['Phones']['id_calle']) AND empty($this->data['Phones']['calle']) AND empty($this->data['ServiciosTelefonicos']['id_calle'])){
-	    e('<div id="warning"><span>Seleccione o Agregue una Calle</span></div>');
+	    e('<div class="alert alert-warning" role="alert">
+                <a class="close" data-dismiss="alert">×</a>
+                Seleccione o Agregue una<strong>Calle</strong>
+              </div>');
 	}else{
 	$this->data['ServiciosTelefonicos']['username'] = $_SESSION['Auth']['User']['username'];
 	$this->data['ServiciosTelefonicos']['turno'] = $_SESSION['Auth']['User']['turno'];
@@ -202,6 +223,3 @@
 	}
 	} //End PhoneServices
   }
-
-
-?>

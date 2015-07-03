@@ -19,7 +19,7 @@ e($ajax->form(array("type"=>"post",
 		    e($form->input('UnidadesEnServicio.id_movil',
 					array("label"=>false,
 					      "type"=>"text",
-					      "size"=>"4",
+					      'class'=>'form-control',
 					      "maxlength" =>"4",
 					      "onKeyPress"=>"return soloNumeros(event)"
 					      )

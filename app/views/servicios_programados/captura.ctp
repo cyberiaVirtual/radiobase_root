@@ -393,7 +393,7 @@ if(count($Registros)>0)
 ?>
 </table>
 </div>
-<?php e($form->submit("Act. Datos"));?>
+<?php e($form->submit("Act. Datos",array("class"=>"btn btn-info")));?>
 <!-- </fieldset> -->
 <?php
 }

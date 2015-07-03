@@ -6,6 +6,7 @@
 	  e($form->input('Phones.id_calle',
 			    array("label"=>false,
 				  "type"=>'select',
+                  'class'=>'form-control',
 				  'options'=>$opt,
 				  'selected'=>$nostreet['Calles']['id_calle']
 				 )
@@ -22,7 +23,8 @@
     }else{
 	  e($form->input('Phones.calle',
 			    array("label"=>false,
-				  "type"=>"text"
+                      "type"=>"text",
+                      'class'=>'form-control',
 				 )
 			)
 	    );
@@ -41,4 +43,3 @@
 	    );
     
     }
-?>

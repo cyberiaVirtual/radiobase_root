@@ -20,7 +20,7 @@ e($ajax->form(array("type"=>"post",
             <td><?php e($form->input('Calles.calle',array("label"=>false,"type"=>"text")));?></td>
         </tr>
         <tr>
-            <td colspan="2" align="right"><?php e($form->submit("Registrar"));?></td>
+            <td colspan="2" align="right"><?php e($form->submit("Registrar",array("class"=>"btn btn-info")));?></td>
         </tr>
     </table>
 <?php
