@@ -9,6 +9,12 @@ e($ajax->form(array("type"=>"post",
              )
  );
 ?>
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h3 class="panel-title">Resultados</h3>
+  </div>
+    <div class="panel-body">
+
 <div class="table-responsive">
 <table id="menu_info" class="table table-striped table-bordered table-hover table-condensed">
 <?php
@@ -18,7 +24,7 @@ if(!empty($UnidadesFueraCiudad)){
     <tr />
       <th />Movil
       <th />Destino
-      <th colspan="2" />Tipo de Servicio
+      <th  />Tipo de Servicio
       <th />Salida
       <th />llegada
       <th />Mon
@@ -51,7 +57,9 @@ if(!empty($UnidadesFueraCiudad)){
     <td />
 	<div id="divLocalidad">
 	    <?php
-		e($form->input('UnidadesFueraCiudad.id_localidad',						array('type'=>'select',
+		e($form->input('UnidadesFueraCiudad.id_localidad',						
+                array('type'=>'select',
+                      'class'=>'form-control',
 				      'label'=>false,
 				      'options'=>$localidades,
 				      'empty'=>'localidad'
@@ -71,11 +79,13 @@ if(!empty($UnidadesFueraCiudad)){
   ));
 
 ?>
-    <td />
+    <td  />
 	<div id="divServicioA">
 
 	    <?php
-		e($form->input('UnidadesFueraCiudad.id_tpo_servicio_a',						array('type'=>'select',
+		e($form->input('UnidadesFueraCiudad.id_tpo_servicio_a',						
+                array('type'=>'select',
+                      'class'=>'form-control',
 				      'label'=>false,
 				      'options'=>$TpoServicio,
 				      'empty'=>'Servicio'
@@ -83,12 +93,12 @@ if(!empty($UnidadesFueraCiudad)){
 			      )
 		 );
 	    ?>
-    <td />
     </div>
-    
     <td />
 	    <?php
-		e($form->input('UnidadesFueraCiudad.hora_salida',						array('type'=>'text',
+		e($form->input('UnidadesFueraCiudad.hora_salida',						
+                array('type'=>'text',
+                      'class'=>'form-control',
 				      'label'=>false,
 				      'placeholder'=>'Ingresa hora de Salida',
 				      'value'=>date('H:i')
@@ -98,7 +108,9 @@ if(!empty($UnidadesFueraCiudad)){
 	    ?>
       <td />
 	    <?php
-		e($form->input('UnidadesFueraCiudad.hora_llegada',						array('type'=>'text',
+		e($form->input('UnidadesFueraCiudad.hora_llegada',						
+                array('type'=>'text',
+                      'class'=>'form-control',
 				      'label'=>false,
 				      'placeholder'=>'Ingresa hora de llegada',
 				     )
@@ -107,7 +119,9 @@ if(!empty($UnidadesFueraCiudad)){
 	    ?>
       <td />
 	    <?php
-		e($form->input('UnidadesFueraCiudad.mom_r',						array('type'=>'checkbox',
+		e($form->input('UnidadesFueraCiudad.mom_r',						
+                array('type'=>'checkbox',
+                      'class'=>'form-control',
 				      'label'=>false,
 				      'title'=>'option'
 				     )
@@ -115,7 +129,8 @@ if(!empty($UnidadesFueraCiudad)){
 		 );
 	    ?>
 <?php
-		e($form->input('UnidadesFueraCiudad.username',						array('type'=>'hidden',
+		e($form->input('UnidadesFueraCiudad.username',						
+                array('type'=>'hidden',
 				      'label'=>false,
 				      'value'=>$username
 				     )
@@ -129,10 +144,13 @@ if(!empty($UnidadesFueraCiudad)){
 </table>
 </div>
 <?php
-e($form->submit('Agregar'));
+e($form->submit('Agregar',array("class"=>"btn btn-info pull-right")));
 ?>
 <?php
 	
 	e($form->end());
 ?>
+    <br/><br/><br/>
 <div id='divAddUnit'><?php include('show_unidades_fuera_ciudad.ctp');?></div>
+  </div>
+</div>

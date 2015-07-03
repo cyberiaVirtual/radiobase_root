@@ -9,13 +9,22 @@ e($ajax->form(array("type"=>"post",
              )
  );
 ?>
-<table id="menu_info">
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h3 class="panel-title">Actualizar Datos</h3>
+  </div>
+    <div class="panel-body">
+<div class="table-responsive">
+<table id="menu_info"  class="table table-striped table-bordered table-hover table-condensed">
+    <thead>
     <tr />
 	<th />ID-Movil
 	<th />ID-Economico
 	<th />Nombre
 	<th />Apellido Paterno
 	<th />Apellido Materno
+    </thead>
+    <tbody>
     <tr />
 	    <?php
 		e($form->input('Operadores.id',
@@ -31,6 +40,7 @@ e($ajax->form(array("type"=>"post",
 	    if(!empty($select)){
 		e($form->input('Operadores.id_movil',
 				array('type'=>'text',
+                      'class'=>'form-control',
 				      'label'=>false,
 				      'readonly'=>true,
 				     'value'=>$operador['Operadores']['id_movil']
@@ -40,6 +50,7 @@ e($ajax->form(array("type"=>"post",
 	    }else{
 		e($form->input('Operadores.id_movil',
 				array('type'=>'text',
+                      'class'=>'form-control',
 				      'label'=>false,
 				      'value'=>$movil
 				     )
@@ -52,6 +63,7 @@ e($ajax->form(array("type"=>"post",
 	    <?php
 		e($form->input('Operadores.id_economico',
 				array('type'=>'text',
+                      'class'=>'form-control',
 				      'label'=>false,
 				      'value'=>$operador['Operadores']['id_economico']
 				     )
@@ -62,6 +74,7 @@ e($ajax->form(array("type"=>"post",
 	    <?php
 		e($form->input('Operadores.nombre',
 				array('type'=>'text',
+                      'class'=>'form-control',
 				      'label'=>false,
 				      'value'=>$operador['Operadores']['nombre']
 				     )
@@ -72,6 +85,7 @@ e($ajax->form(array("type"=>"post",
 	    <?php
 		e($form->input('Operadores.ap_paterno',
 				array('type'=>'text',
+                      'class'=>'form-control',
 				      'label'=>false,
 				      'value'=>$operador['Operadores']['ap_paterno']
 				     )
@@ -82,16 +96,23 @@ e($ajax->form(array("type"=>"post",
 	    <?php
 		e($form->input('Operadores.ap_materno',
 				array('type'=>'text',
+                      'class'=>'form-control',
 				      'label'=>false,
 				      'value'=>$operador['Operadores']['ap_materno']
 				     )
 			      )
 		 );
 	    ?>
+    </tbody>
 </table>
 
 <?php
-	e($form->submit('Actualizar'));
+	e($form->submit('Actualizar',array("class"=>"btn btn-info pull-right")));
 	e($form->end());
+    
 ?>
+    <br/><br/><br/>
 <div id='divOperators'><?php include('show_operators.ctp');?></div>
+ </div>
+</div>
+</div>

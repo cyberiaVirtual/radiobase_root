@@ -7,7 +7,8 @@
 	if(!empty($NoLocale)){
 	  e($form->input('Localidades.localidad',
 				    array("label"=>false,
-					  "type"=>"text"
+					  "type"=>"text",
+                      'class'=>'form-control'  
 					 )
 			)
 	    );
@@ -15,6 +16,7 @@
 	  e($form->input('UnidadesFueraCiudad.id_localidad',
 				    array("label"=>false,
 					  "type"=>"select",
+                      'class'=>'form-control',
 					  'options'=>$localidades,
 					  'selected'=>$id_localidad
 					 )

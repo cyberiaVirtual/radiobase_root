@@ -13,27 +13,40 @@ e($ajax->form(array("type"=>"post",
                    )
              )
  );
+$label = (!empty($FindPhone)) ? 'Actualizar' : 'Registrar';
 ?>
-<table id="menu_info">
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h3 class="panel-title"><?php e($label);?></h3>
+  </div>
+    <div class="panel-body">
+<div class="table-responsive">
+<table id="menu_info"  class="table table-striped table-bordered table-hover table-condensed">
 <?php
 if(!empty($FindPhone)){
 ?>
+    <thead>
     <tr />
       <th />ID
       <th />Municipio
       <th />Colonia
       <th />Calle
-      <th />N&uacute;mero
+      <th />Número
       <th />Lada
       <th />Telefono
       <th />Celular
       <th />Nombre
-      <th />Llama y cuelga
+      <th />Llama/cuelga
+    </thead>
+    <tbody>
     <tr />
+    
+    
       <td />
 	    <?php
 		e($FindPhone['Phones']['id']);
-		e($form->input('Phones.id',							array('type'=>'hidden',
+		e($form->input('Phones.id',							
+                array('type'=>'hidden',
 				      'label'=>false,
 				      'value'=>$FindPhone['Phones']['id']
 				     )
@@ -43,7 +56,8 @@ if(!empty($FindPhone)){
       <td />
 	    <?php
 		e('Coatepec');
-		e($form->input('Phones.id_localidad',							array('type'=>'hidden',
+		e($form->input('Phones.id_localidad',							
+                array('type'=>'hidden',
 				      'label'=>false,
 				      'value'=>$FindPhone['Phones']['id_localidad']
 				     )
@@ -52,7 +66,9 @@ if(!empty($FindPhone)){
 	    ?>
       <td />
 	    <?php
-		e($form->input('Phones.id_colonia',							array('type'=>'select',
+		e($form->input('Phones.id_colonia',							
+                array('type'=>'select',
+                      'class'=>'form-control',
 				      'label'=>false,
 				      'options'=>$colonia,
 				      'selected'=>$FindPhone['Phones']['id_colonia']
@@ -64,6 +80,7 @@ if(!empty($FindPhone)){
 	    <?php
 		e($form->input('Phones.id_calle',
 				array('type'=>'select',
+                      'class'=>'form-control',
 				      'label'=>false,
 				      'options'=>$street,
 				      'selected'=>$FindPhone['Phones']['id_calle']
@@ -75,6 +92,7 @@ if(!empty($FindPhone)){
 	    <?php
 		e($form->input('Phones.numero',
 				array('type'=>'text',
+                      'class'=>'form-control',
 				      'label'=>false,
 				      'value'=>$FindPhone['Phones']['numero']
 				     )
@@ -85,6 +103,7 @@ if(!empty($FindPhone)){
 	    <?php
 		e($form->input('Phones.lada',
 				array('type'=>'text',
+                      'class'=>'form-control',
 				      'label'=>false,
 				      'value'=>$FindPhone['Phones']['lada']
 				     )
@@ -95,6 +114,7 @@ if(!empty($FindPhone)){
 	    <?php
 		e($form->input('Phones.phone',
 				array('type'=>'text',
+                      'class'=>'form-control',
 				      'label'=>false,
 				      'value'=>$FindPhone['Phones']['phone']
 				     )
@@ -105,6 +125,7 @@ if(!empty($FindPhone)){
 	    <?php
 		e($form->input('Phones.cellphone',
 				array('type'=>'text',
+                      'class'=>'form-control',
 				      'label'=>false,
 				      'value'=>$FindPhone['Phones']['cellphone']
 				     )
@@ -115,6 +136,7 @@ if(!empty($FindPhone)){
 	    <?php
 		e($form->input('Phones.name',
 				array('type'=>'text',
+                      'class'=>'form-control',
 				      'label'=>false,
 				      'value'=>$FindPhone['Phones']['name']
 				     )
@@ -123,7 +145,9 @@ if(!empty($FindPhone)){
 	    ?>
       <td />
 	    <?php
-		e($form->input('Phones.call_and_go',							array('type'=>'select',
+		e($form->input('Phones.call_and_go',							
+                array('type'=>'select',
+                      'class'=>'form-control',
 				      'label'=>false,
 				      'options'=>array(0=>'No',1=>'Si'),
 				      'selected'=>$FindPhone['Phones']['call_and_go']
@@ -142,16 +166,19 @@ if(!empty($FindPhone)){
          )
   ));
 ?>
+    <thead>
     <tr />
       <th />Municipio
       <th />Colonia
       <th />Calle
-      <th />N&uacute;mero
+      <th />Número
       <th />Lada
       <th />Telefono
       <th />Celular
       <th />Nombre
-      <th />Llama y cuelga
+      <th />LLama/Cuelga
+    </thead>
+    <tbody>
     <tr />
       <td />Coatepec
 	    <?php
@@ -177,7 +204,7 @@ if(!empty($FindPhone)){
 		 e($form->input('Calles.colonia',
 						array('type'=>'select',
 						      'label'=>false,
-						      'class'=>'calles',
+						      'class'=>'form-control',
 						      'options'=>$colonia,
 						      'empty'=>'Seleccionar Colonia'
 						      )
@@ -189,6 +216,7 @@ if(!empty($FindPhone)){
 		e($form->input('Street.id',
 				array('type'=>'select',
 				      'label'=>false,
+                      'class'=>'form-control',
 				      'options'=>array('Seleccionar Calle')
 // 				      'selected'=>'empty'
 				     )
@@ -201,7 +229,9 @@ if(!empty($FindPhone)){
 
 		e($form->input('Phones.numero',
 				array('type'=>'text',
+                      'class'=>'form-control',
 				      'label'=>false
+                    
 				     )
 			      )
 		 );
@@ -211,6 +241,7 @@ if(!empty($FindPhone)){
 
 		e($form->input('Phones.lada',
 				array('type'=>'text',
+                      'class'=>'form-control',
 				      'label'=>false
 				     )
 			      )
@@ -221,6 +252,7 @@ if(!empty($FindPhone)){
 
 		e($form->input('Phones.phone',
 				array('type'=>'text',
+                      'class'=>'form-control',
 				      'label'=>false,
 				      'value'=>$this->data['Phones']['data']
 				     )
@@ -232,6 +264,7 @@ if(!empty($FindPhone)){
 
 		e($form->input('Phones.cellphone',
 				array('type'=>'text',
+                      'class'=>'form-control',
 				      'label'=>false
 				     )
 			      )
@@ -242,6 +275,7 @@ if(!empty($FindPhone)){
 
 		e($form->input('Phones.name',
 				array('type'=>'text',
+                      'class'=>'form-control',
 				      'label'=>false
 				     )
 			      )
@@ -249,7 +283,9 @@ if(!empty($FindPhone)){
 	    ?>
       <td />
 	    <?php
-		e($form->input('Phones.call_and_go',							array('type'=>'select',
+		e($form->input('Phones.call_and_go',
+                array('type'=>'select',
+                      'class'=>'form-control',
 				      'label'=>false,
 				      'options'=>array(0=>'No',1=>'Si'),
 				      'selected'=>0
@@ -258,14 +294,17 @@ if(!empty($FindPhone)){
 		 );
 	    ?>
 <?php } ?>
+    </tbody>
 </table>
 <?php
-	e($form->submit('Actualizar'));
+	e($form->submit('Actualizar',array("class"=>"btn btn-info pull-right")));
 	e($form->end());
 ?>
-<div id='divPhones'><?php include('show_phones.ctp');?></div>
-
-
+    <br/><br/><br/>
+    <div id='divPhones'><?php include('show_phones.ctp');?></div>
+    </div>
+</div>
+</div>
 
 
 

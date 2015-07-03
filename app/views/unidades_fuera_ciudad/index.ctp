@@ -21,8 +21,8 @@
       <p><div class="form-group"><?php
 	e($form->input('UnidadesFueraCiudad.data',
 			array('type'=>'text',
+                  'class'=>'form-control',
 			      'label'=>'Buscar Unidad',
-			      'class'=>'form-control',
 			      "onKeyPress"=>"return soloNumeros(event)",
 			      'placeholder'=>'Buscar registro => Ingresa Numero de Unidad (alt+shift+b)'
 			     )

@@ -3,6 +3,7 @@
              array("id"=>"id_calle",
                    "label"=>false,
                    "type"=>"select",
+                   'class'=>'form-control',
                    "options"=>$Calles,
                    "empty"=>"-Calles-",
                    "class"=>"form-control"
