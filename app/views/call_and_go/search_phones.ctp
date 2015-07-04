@@ -36,7 +36,7 @@ if(!empty($FindPhone)){
       <th />Telefono
       <th />Celular
       <th />Nombre
-      <th />Llama/cuelga
+      <th />Llama/Cuelga
     </thead>
     <tbody>
     <tr />
@@ -143,7 +143,8 @@ if(!empty($FindPhone)){
 			      )
 		 );
 	    ?>
-      <td />
+      <td align="center" />
+      
 	    <?php
 		e($form->input('Phones.call_and_go',							
                 array('type'=>'select',
@@ -176,7 +177,7 @@ if(!empty($FindPhone)){
       <th />Telefono
       <th />Celular
       <th />Nombre
-      <th />LLama/Cuelga
+      <th />Llama/Cuelga
     </thead>
     <tbody>
     <tr />

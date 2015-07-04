@@ -86,9 +86,9 @@
     if(empty($RetPhone)){
         e('<div class="alert alert-warning" role="alert">
                 <a class="close" data-dismiss="alert">×</a>
-                El Telefono<strong> No se Encuentra en el Registro</strong>
+                No se Encuentra el<strong> Teléfono en el Registro</strong>
               </div>
-              <div class="alert alert-success" role="alert">
+              <div class="alert alert-info" role="alert">
                 <a class="close" data-dismiss="alert">×</a>
                 Llena los Siguientes Campos para Registrar el Número Telefónico
               </div><div class="clear"></div>');

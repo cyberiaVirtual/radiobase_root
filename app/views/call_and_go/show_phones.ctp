@@ -23,8 +23,8 @@
       <th />Calle
       <th />Número
       <th />Telefono
-      <th />Llama y cuelga
-      <th />Borrar
+      <th style="text-align: center;"/>Llama y cuelga
+      <th style="text-align: center;"/>Borrar
     </thead>
     <?php $idx=1;?>
     <tbody>
@@ -35,7 +35,7 @@
       <td /><?php e($street[$phones[$key]['Phones']['id_calle']]);?>
       <td /><?php e($phones[$key]['Phones']['numero']);?>
       <td /><?php e($phones[$key]['Phones']['phone']);?>
-      <td />
+      <td align="center"/>
 	    <?php
 		$chk=$phones[$key]['Phones']['call_and_go'];
 		if($chk==1){
@@ -58,7 +58,9 @@
 		 );
 		}
 	    ?>
-      <td /><?php echo $this->Html->link('Borrar', array('action' => 'delete', $phones[$key]['Phones']['id']), null, 'Estas seguro?' );?>
+      <td style="text-align: center;"/>
+          <?php echo $this->Html->link('Borrar', 
+              array('action' => 'delete', $phones[$key]['Phones']['id']), null, '¿Desea eliminar este registro?' );?>
     <?php } //end foreach?>
       </tbody>
 </table>
