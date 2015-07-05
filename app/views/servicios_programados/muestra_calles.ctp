@@ -6,7 +6,6 @@
                    'class'=>'form-control',
                    "options"=>$Calles,
                    "empty"=>"-Calles-",
-                   "class"=>"form-control"
                   ))
     );
     
