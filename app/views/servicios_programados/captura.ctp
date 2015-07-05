@@ -32,6 +32,11 @@ e($ajax->form(array("type"=>"post",
     
 <!-- <fieldset> -->
 <!--     <legend>Nuevo Servicio Programado</legend> -->
+<div class="panel panel-default">
+  <div class="panel-heading">
+      <h3 class="panel-title">&nbsp;</h3>
+  </div>
+  <div class="panel-body">
 <div class="table-responsive">
 <table id="menu_info" class="table table-striped table-bordered table-hover table-condensed">
     <thead>
@@ -163,7 +168,7 @@ e($ajax->form(array("type"=>"post",
    </tr>
    </tbody>
 </table>
-<?php e($form->submit("Registrar",array("class"=>"btn btn-info")));?>
+<?php e($form->submit("Registrar",array("class"=>"btn btn-info pull-right")));?>
 <?php
 e($ajax->observeField('id_colonia',
     array("url"=>array("controller"=>"ServiciosProgramados",
@@ -174,6 +179,7 @@ e($ajax->observeField('id_colonia',
   ));
 e($form->end());
 ?>
+    <br/><br/>
 <!-- </fieldset> -->
     
 <?php 
@@ -193,7 +199,8 @@ if(count($Registros)>0)
     <br/>
 <!-- <fieldset> -->
 <!--     <legend>Servicios Programados</legend> -->
-<table id="menu_info" border="0" width="100%">
+<div class="table-responsive">
+<table id="menu_info" class="table table-striped table-bordered table-hover table-condensed">
   <tr align="center" >
     <td width="10%">HORA</td>
     <td width="35%">DIRECCIÓN</td>
@@ -292,11 +299,11 @@ if(count($Registros)>0)
        <tr align="center" bgcolor="<?php e($bg_color)?>">
        <td><?php 
                 e($form->input('ServiciosProgramados.'.$key.'.id',array("label"=>false,"type"=>"hidden","value"=>$registro['ServiciosProgramados']['id'])));
-                e($form->input('ServiciosProgramados.'.$key.'.hora',array("label"=>false,"type"=>"text","value"=>$registro['ServiciosProgramados']['hora'],"size"=>"10")));
+                e($form->input('ServiciosProgramados.'.$key.'.hora',array("label"=>false,"type"=>"text","value"=>$registro['ServiciosProgramados']['hora'],"class"=>"form-control")));
            ?>
        </td>
        <td><?php e(utf8_encode($registro['Calle']['calle'].' #'.$registro['ServiciosProgramados']['numero'].' Col. '.$registro['Calle']['Colonia']['colonia']));?></td>
-       <td><?php e($form->input('ServiciosProgramados.'.$key.'.lunes',array("label"=>false,"type"=>"text","size"=>"3","value"=>$registro['ServiciosProgramados']['lunes'])));?></td>
+       <td><?php e($form->input('ServiciosProgramados.'.$key.'.lunes',array("label"=>false,"type"=>"text","class"=>"form-control","value"=>$registro['ServiciosProgramados']['lunes'])));?></td>
        <td>
 	    <?php
 		e($form->input("ServiciosProgramados.$key.LunGo",							array('type'=>'checkbox',
@@ -308,7 +315,7 @@ if(count($Registros)>0)
 	     );
 	    ?>
        </td>
-       <td><?php e($form->input('ServiciosProgramados.'.$key.'.martes',array("label"=>false,"type"=>"text","size"=>"3","value"=>$registro['ServiciosProgramados']['martes'])));?></td>
+       <td><?php e($form->input('ServiciosProgramados.'.$key.'.martes',array("label"=>false,"type"=>"text","class"=>"form-control","value"=>$registro['ServiciosProgramados']['martes'])));?></td>
        <td>
 	    <?php
 		e($form->input("ServiciosProgramados.$key.MarGo",							array('type'=>'checkbox',
@@ -320,7 +327,7 @@ if(count($Registros)>0)
 	     );
 	    ?>
        </td>
-       <td><?php e($form->input('ServiciosProgramados.'.$key.'.miercoles',array("label"=>false,"type"=>"text","size"=>"3","value"=>$registro['ServiciosProgramados']['miercoles'])));?></td>
+       <td><?php e($form->input('ServiciosProgramados.'.$key.'.miercoles',array("label"=>false,"type"=>"text","class"=>"form-control","value"=>$registro['ServiciosProgramados']['miercoles'])));?></td>
        <td>
 	    <?php
 		e($form->input("ServiciosProgramados.$key.MieGo",
@@ -333,7 +340,7 @@ if(count($Registros)>0)
 	     );
 	    ?>
        </td>
-       <td><?php e($form->input('ServiciosProgramados.'.$key.'.jueves',array("label"=>false,"type"=>"text","size"=>"3","value"=>$registro['ServiciosProgramados']['jueves'])));?></td>
+       <td><?php e($form->input('ServiciosProgramados.'.$key.'.jueves',array("label"=>false,"type"=>"text","class"=>"form-control","value"=>$registro['ServiciosProgramados']['jueves'])));?></td>
        <td>
 	    <?php
 		e($form->input("ServiciosProgramados.$key.JueGo",
@@ -346,7 +353,7 @@ if(count($Registros)>0)
 	     );
 	    ?>
        </td>
-       <td><?php e($form->input('ServiciosProgramados.'.$key.'.viernes',array("label"=>false,"type"=>"text","size"=>"3","value"=>$registro['ServiciosProgramados']['viernes'])));?></td>
+       <td><?php e($form->input('ServiciosProgramados.'.$key.'.viernes',array("label"=>false,"type"=>"text","class"=>"form-control","value"=>$registro['ServiciosProgramados']['viernes'])));?></td>
        <td>
 	    <?php
 		e($form->input("ServiciosProgramados.$key.VieGo",
@@ -359,7 +366,7 @@ if(count($Registros)>0)
 	     );
 	    ?>
        </td>
-       <td><?php e($form->input('ServiciosProgramados.'.$key.'.sabado',array("label"=>false,"type"=>"text","size"=>"3","value"=>$registro['ServiciosProgramados']['sabado'])));?></td>
+       <td><?php e($form->input('ServiciosProgramados.'.$key.'.sabado',array("label"=>false,"type"=>"text","class"=>"form-control","value"=>$registro['ServiciosProgramados']['sabado'])));?></td>
        <td>
 	    <?php
 		e($form->input("ServiciosProgramados.$key.SabGo",
@@ -384,6 +391,7 @@ if(count($Registros)>0)
 			  )
 	     );
 	    ?>
+           
        </td>
        <td><?php echo $this->Html->link('Borrar', array('action' => 'delete', $Registros[$key]['ServiciosProgramados']['id']), null, 'Estas seguro?' );?></td>
        </tr>
@@ -393,10 +401,12 @@ if(count($Registros)>0)
 ?>
 </table>
 </div>
-<?php e($form->submit("Act. Datos",array("class"=>"btn btn-info")));?>
+<?php e($form->submit("Act. Datos",array("class"=>"btn btn-info pull-right")));?>
 <!-- </fieldset> -->
 <?php
 }
 e($form->end());
 ?>
+</div>
+</div>
 </div>
