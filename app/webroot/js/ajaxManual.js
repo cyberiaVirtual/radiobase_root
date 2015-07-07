@@ -67,8 +67,8 @@ function calculaEdad()
 
 function soloNumeros(evt)
 {
-    if(document.getElementById('num_emp').checked==true)
-    {
+    /*if(document.getElementById('num_emp').checked==true)
+    {*/
         var charCode = (evt.which) ? evt.which : event.keyCode
         if(charCode > 31 && (charCode < 45 || charCode >57))
         {
@@ -77,7 +77,7 @@ function soloNumeros(evt)
         }else{
                 return true;
              }
-    }
+   /* }*/
 }
 
 function calculaHomoClv()
@@ -139,4 +139,11 @@ function jsClock24hr(){
   temp += ((second < 10) ? ":0" : ":") + second
   document.clockForm24hr.digits.value = temp
   id = setTimeout("jsClock24hr()",1000)
+}
+
+function loginForm(){
+    
+ $("log_in_button").click(function(){
+    $("username").slideDown();
+}); 
 }

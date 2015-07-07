@@ -16,6 +16,7 @@ if( isset($Notext) && !isset($NoService) ){
     e($form->input('UnidadesFueraCiudad.id_tpo_servicio_b',
 			array("label"=>false,
 			      "type"=>"select",
+                  'class'=>'form-control',
 			      'options'=>$TpoServicio,
 			      'selected'=>$id_tpo_servicio
 			)
@@ -25,12 +26,15 @@ if( isset($Notext) && !isset($NoService) ){
     e($form->input('UnidadesFueraCiudad.id_tpo_servicio_b',
 			array("label"=>false,
 			      "type"=>"select",
+                  'class'=>'form-control',
 			      'options'=>$TpoServicio,
 			      'selected'=>$id_tpo_servicio
 			)
 		  )
     );
-    e($form->input('UnidadesFueraCiudad.num_tpo_servicio_b',								    array('type'=>'text',
+    e($form->input('UnidadesFueraCiudad.num_tpo_servicio_b',								    
+                array('type'=>'text',
+                      'class'=>'form-control',
 				      'label'=>false,
 				      'placeholder'=>'Cantidad separados por punto',
 				      'title'=>'Ingresa el numero de Ocupantes'
@@ -38,4 +42,3 @@ if( isset($Notext) && !isset($NoService) ){
 		  )
      );
 }
-?>

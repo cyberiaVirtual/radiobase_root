@@ -241,11 +241,15 @@
     <div id="warning"><span>Control de Unidades en Servicio</span></div>
     <?php
     if(empty($list_report)){
-	e('<div id="warning"><span>No se Encontraron Registros</span></div>');
+        e('<div class="alert alert-warning" role="alert">
+            <a class="close" data-dismiss="alert">×</a>
+            <strong>Sin Registros aún!</strong>
+          </div>');
     }else{
 	?>
-	<div id="reports">
-	    <table id="menu_info">
+	<div class="table-responsive">
+<table id="menu_info" class="table table-striped table-bordered table-hover table-condensed">
+    <thead>
 		<tr />
 		    <th />ID
 		    <th colspan="4"/>Unidades En Servicio
@@ -271,7 +275,8 @@
 			    }
 			?>
 		    <td />C/U
-	
+    </thead> 
+    <tbody>
 	<?php foreach($list_report as $key => $value){?>
 	<tr />
 	<td /><?php e($value['UnidadesEnServicio']['id_movil']);?>
@@ -328,6 +333,7 @@
 	?>
 
     <?php }?>
+    </tbody>
 </table>
 </div>
     <?php

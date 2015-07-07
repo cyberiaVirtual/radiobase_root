@@ -16,11 +16,11 @@ e($ajax->form(array("type"=>"post",
             <td>Nombre Calle</td>
         </tr>
         <tr>
-            <td><?php e($form->input('Colonias.colonia',array("label"=>false,"type"=>"text")));?></td>
-            <td><?php e($form->input('Calles.calle',array("label"=>false,"type"=>"text")));?></td>
+            <td><?php e($form->input('Colonias.colonia',array("label"=>false,"type"=>"text","class"=>"form-control")));?></td>
+            <td><?php e($form->input('Calles.calle',array("label"=>false,"type"=>"text","class"=>"form-control")));?></td>
         </tr>
         <tr>
-            <td colspan="2" align="right"><?php e($form->submit("Registrar"));?></td>
+            <td colspan="2" align="right"><?php e($form->submit("Registrar",array("class"=>"btn btn-info")));?></td>
         </tr>
     </table>
 <?php

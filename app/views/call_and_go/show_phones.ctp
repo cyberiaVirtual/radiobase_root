@@ -21,10 +21,10 @@
       <th />ID
       <th />Colonia
       <th />Calle
-      <th />N&uacute;mero
+      <th />Número
       <th />Telefono
-      <th />Llama y cuelga
-      <th />Borrar
+      <th style="text-align: center;"/>Llama y cuelga
+      <th style="text-align: center;"/>Borrar
     </thead>
     <?php $idx=1;?>
     <tbody>
@@ -35,7 +35,7 @@
       <td /><?php e($street[$phones[$key]['Phones']['id_calle']]);?>
       <td /><?php e($phones[$key]['Phones']['numero']);?>
       <td /><?php e($phones[$key]['Phones']['phone']);?>
-      <td />
+      <td align="center"/>
 	    <?php
 		$chk=$phones[$key]['Phones']['call_and_go'];
 		if($chk==1){
@@ -58,7 +58,9 @@
 		 );
 		}
 	    ?>
-      <td /><?php echo $this->Html->link('Borrar', array('action' => 'delete', $phones[$key]['Phones']['id']), null, 'Estas seguro?' );?>
+      <td style="text-align: center;"/>
+          <?php echo $this->Html->link('Borrar', 
+              array('action' => 'delete', $phones[$key]['Phones']['id']), null, '¿Desea eliminar este registro?' );?>
     <?php } //end foreach?>
       </tbody>
 </table>
@@ -86,6 +88,8 @@
 ?>
 
 <?php }else{
-	e('<div id="warning"> Aun no existen Registros </div>');
-      }	
-?>
+            e('<div class="alert alert-warning" role="alert">
+                <a class="close" data-dismiss="alert">×</a>
+                <strong>Sin Registros aún!</strong>
+              </div>');
+      }

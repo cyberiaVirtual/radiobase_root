@@ -35,18 +35,29 @@ if(count($Registros)>0)
            <td><?php e($registro['UnidadesFueraCiudad']['hora_salida']);?></td>
            <td><?php 
             $h_llegada = ($registro['UnidadesFueraCiudad']['hora_llegada']=='00:00:00') ? '' :$registro['UnidadesFueraCiudad']['hora_llegada'];
-            e($form->input('UnidadesFueraCiudad.'.$key.'.hora_llegada',array("label"=>false,"type"=>"text","size"=>"6","maxlength" =>"8","onKeyPress"=>"return soloNumeros(event)","value"=>$h_llegada,"onFocus"=>"this.value='';")));?></td>
+            e($form->input('UnidadesFueraCiudad.'.$key.'.hora_llegada',
+                array("label"=>false,
+                    "type"=>"text",
+                    'class'=>'form-control',
+                    "maxlength" =>"8",
+                    "onKeyPress"=>"return soloNumeros(event)",
+                    "value"=>$h_llegada,"onFocus"=>"this.value='';")));?></td>
            <td><?php 
             $checked = ($registro['UnidadesFueraCiudad']['mom_r']=='1') ? 'true' :'false';		
 
-            e($form->input('UnidadesFueraCiudad.'.$key.'.mom_r',array("label"=>false,"type"=>"checkbox","value"=>$registro['UnidadesFueraCiudad']['mom_r'],"checked"=>$checked)));?></td>
+            e($form->input('UnidadesFueraCiudad.'.$key.'.mom_r',
+                array("label"=>false,
+                    "type"=>"checkbox",
+                    'class'=>'form-control',
+                    "value"=>$registro['UnidadesFueraCiudad']['mom_r'],
+                    "checked"=>$checked)));?></td>
            <td>&nbsp</td>
 
            </tr>
          <?php
       }
     ?>
-    <tr><td align="right" colspan="5">&nbsp;</td><td colspan="2" align="center"><?php e($form->submit("Act. Datos"));?></td></tr>
+    <tr><td align="right" colspan="5">&nbsp;</td><td colspan="2" align="center"><?php e($form->submit("Act. Datos",array("class"=>"btn btn-info pull-right")));?></td></tr>
 </tbody>
 </table>
 </div>

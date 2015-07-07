@@ -1,19 +1,20 @@
 <?php
 echo $form->create('User', array('action' => 'login','id'=>'form2','class'=>'form-horizontal','role'=>'form'));
 ?>
-
+<section  id="log_in_panel" style="display: none;">
 <div class="panel panel-default">
   <div class="panel-heading">
     <h3 class="panel-title">Iniciar Sesión</h3>
   </div>
   <div class="panel-body">
       <p>
-        <div class="form-group">
-        <label for="inputEmail3" class="col-sm-2 control-label">Usuario</label>
+        <div class="form-group" id="formLogin">
+        <label class="col-sm-2 control-label">Usuario</label>
         <div class="col-sm-10">
             <?php echo $form->input('username',
                 array("label"=>false,
-                  "class"=>"form-control"
+                  "class"=>"form-control",
+                    "id" => "username"
 
                  )
                );
@@ -43,4 +44,5 @@ echo $form->create('User', array('action' => 'login','id'=>'form2','class'=>'for
     </p>
   </div>
 </div>
-<?php echo $form->end();
+</section>
+<?php echo $form->end();?>

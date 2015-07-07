@@ -26,12 +26,12 @@ e($ajax->form(array("type"=>"post",
     <tbody>
       <tr align="center">
         <td ><?php e($UnidadesEnServicio['UnidadesEnServicio']['id_movil']);e($form->input('UnidadesFueraCiudad.id_movil',array("label"=>false,"type"=>"hidden","value"=>$UnidadesEnServicio['UnidadesEnServicio']['id_movil'])));?></td>
-        <td><?php e($form->input('UnidadesFueraCiudad.id_localidad',array("label"=>false,"type"=>"select","options"=>$localidades,"empty"=>"Seleccionar")));?></td>
-        <td><?php e($form->input('UnidadesFueraCiudad.id_tpo_servicio',array("label"=>false,"type"=>"select","options"=>$tpo_servicio,"empty"=>"Seleccionar")));?></td>
-        <td><?php e($form->input('UnidadesFueraCiudad.hora_salida',array("label"=>false,"type"=>"text","size"=>"4","maxlength" =>"4","value"=>date("Hi"))));?></td>
-        <td><?php e($form->input('UnidadesFueraCiudad.hora_llegada',array("label"=>false,"type"=>"text","size"=>"4","maxlength" =>"4")));?></td>
+        <td><?php e($form->input('UnidadesFueraCiudad.id_localidad',array("label"=>false,"type"=>"select",'class'=>'form-control',"options"=>$localidades,"empty"=>"Seleccionar")));?></td>
+        <td><?php e($form->input('UnidadesFueraCiudad.id_tpo_servicio',array("label"=>false,"type"=>"select",'class'=>'form-control',"options"=>$tpo_servicio,"empty"=>"Seleccionar")));?></td>
+        <td><?php e($form->input('UnidadesFueraCiudad.hora_salida',array("label"=>false,"type"=>"text",'class'=>'form-control',"maxlength" =>"4","value"=>date("Hi"))));?></td>
+        <td><?php e($form->input('UnidadesFueraCiudad.hora_llegada',array("label"=>false,"type"=>"text",'class'=>'form-control',"maxlength" =>"4")));?></td>
         <td>&nbsp;</td>
-        <td><?php e($form->submit("+")); ?></td>
+        <td><?php e($form->submit("+",array("class"=>"btn btn-info pull-right"))); ?></td>
       </tr>
     </tbody>
 </table>
@@ -41,6 +41,8 @@ e($ajax->form(array("type"=>"post",
 }
 else
 {
-    e("<div class='warning'>No se encontró Unidad en Servicio</div>");
+     e('<div class="alert alert-warning" role="alert">
+                <a class="close" data-dismiss="alert">×</a>
+                <strong>No se encontró Unidad en Servicio</strong>
+              </div>');
 }
-?>

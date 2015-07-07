@@ -101,7 +101,10 @@
     function searchOperadores(){
 //     pr($this->data);exit();
 	if(empty($this->data['Operadores']['id_movil'])){
-	    e('<div id="warning"><span>Ingrese Un Numero de Movil</span></div>');
+         e('<div class="alert alert-warning" role="alert">
+                <a class="close" data-dismiss="alert">×</a>
+                <strong>Ingrese Un Numero de Movil!</strong>
+            </div>');
 	    exit();
 	}
 	$conditions = array();
