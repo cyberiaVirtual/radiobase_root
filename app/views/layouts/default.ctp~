@@ -28,6 +28,7 @@
 		/** NOTE prototype **/
 		e($this->Html->script($theme.'prototype/prototype'));
 		e($this->Html->script($theme.'scriptaculous/scriptaculous.js?load=effects'));
+		
 
 		/** @require*/
 		e($this->Html->script($theme.'require/require'));
