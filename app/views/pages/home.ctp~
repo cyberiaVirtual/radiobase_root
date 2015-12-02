@@ -1,5 +1,4 @@
-
-	<div class="jumbotron" contenteditable="true">
+<div class="jumbotron" contenteditable="true">
 			<h1>Bienvenido a Radiobase!</h1>
 			<p>Sistema de Administración de Radiotaxis</p>
 			<div class="container-fluid">
@@ -9,4 +8,4 @@
                      </center>
                 </div>
             </div>
-	</div>
+		</div>

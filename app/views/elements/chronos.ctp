@@ -2,9 +2,9 @@
 <?php
 	echo $html->charset("UTF-8");
 	$opt = array(
-		"update" => "data_div",
-		"url"    => "/remote_timer/disp",
-		"frequency" => 1,
+				"update" => "data_div",
+				"url"    => "/remote_timer/disp",
+				"frequency" => 1,
 	       );
 	echo $ajax->remoteTimer($opt);
 ?>

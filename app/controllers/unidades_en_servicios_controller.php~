@@ -99,7 +99,7 @@
     }
 
     function searchOperadores(){
-//     pr($this->data);exit();
+    pr($this->data);exit();
 	if(empty($this->data['Operadores']['id_movil'])){
          e('<div class="alert alert-warning" role="alert">
                 <a class="close" data-dismiss="alert">×</a>

@@ -29,6 +29,7 @@
 		/** NOTE prototype **/
 		e($this->Html->script($theme.'prototype/prototype'));
 		e($this->Html->script($theme.'scriptaculous/scriptaculous.js?load=effects'));
+		e($this->Html->script($theme.'radiobase/notification'));
 		
 
 		/** @require*/
@@ -185,6 +186,14 @@
                 <div class="col-md-12 column" >
 					<?php echo $content_for_layout ?>
                     <?php e($this->Session->flash()); ?>
+<!-- 						edit this -->
+						<span>
+							<?php
+// 								App::import('Controller', 'RemoteTimer');
+// 								echo $this->element('chronos');
+							?>
+						</span>
+<!-- 						edit -->
 				</div>
 			</div>
 		</div>
@@ -198,8 +207,7 @@
       <div class="container" role="contentinfo">
         <div class="row">
           <div class="col-sm-12">
-          	
-            
+
           </div>
         </div><!--/row-->
 
@@ -207,6 +215,12 @@
         	<div class="col-md-12">
               	<p class="text-right">
               	GNU Licencia. Desarrollado por <a href="http://cyberiavirtual.org" rel="nofollow">Cyberia Virtual</a>.
+              	<span>
+					<?php
+						App::import('Controller', 'RemoteTimer');
+						echo $this->element('chronos');
+					?>
+              	</span>
                 </p>
           	</div>
         </div><!--/row-->

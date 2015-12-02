@@ -14,8 +14,8 @@ class RemoteTimerController extends AppController {
 	    $conditions['ServiciosProgramados.turno'] = $_SESSION['Auth']['User']['turno'];
 	    $Chronos=$this->ServiciosProgramados->find('all',array('fields'=>array('hora'),'conditions'=>$conditions));
 	    $Era = $this->ServiciosProgramados->find('all',array('conditions'=>$conditions));
-// 	    debug($Chronos);
-// 	    debug($Era);
+	    debug($Chronos);
+	    debug($Era);
 	    $days = array('1'=>'LunGo',
 			  '2'=>'MarGo',
 			  '3'=>'MieGo',
